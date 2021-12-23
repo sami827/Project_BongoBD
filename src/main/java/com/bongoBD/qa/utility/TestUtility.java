@@ -6,7 +6,7 @@ import com.bongoBD.qa.base.BaseClass;
 public class TestUtility extends BaseClass {
 
     public static long PAGE_LOAD_TIMEOUT = 30;
-    public static long IMPLICIT_WAIT = 10;
+    public static long IMPLICIT_WAIT = 30;
 
     public void switchToFrameByName(String frameName) {
 

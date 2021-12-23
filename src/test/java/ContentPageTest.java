@@ -1,6 +1,7 @@
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,11 +24,12 @@ public class ContentPageTest extends BaseClass {
     }
 
 
-    @Test
+    @Test(priority = 1)
     public void validatingContentTitle() {
-
-
+        boolean flag = contentPage.verifyContent();
+        Assert.assertTrue(flag);
     }
+
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
