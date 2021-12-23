@@ -1,3 +1,5 @@
+package com.qa.BongoBD.qa.testCases;
+
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
