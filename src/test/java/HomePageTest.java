@@ -1,6 +1,7 @@
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -9,7 +10,6 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseClass {
 
     private String EXPECTED_TITLE = "BONGO | Watch Live Tv, Bangla Movies, Natoks Anytime Anywhere";
-
 
     HomePage homePage;
     ContentPage contentPage;
@@ -26,7 +26,7 @@ public class HomePageTest extends BaseClass {
     }
 
     //Verifying Page Title
-    @Test(priority = 1)
+    @Test(priority = 3)
     public void validatePageTitle() {
         String actualTitle = homePage.verifyTitle();
         Assert.assertEquals(actualTitle, EXPECTED_TITLE, "Title doesn't match");
@@ -39,8 +39,10 @@ public class HomePageTest extends BaseClass {
         Assert.assertTrue(flag);
     }
 
-    @Test(priority = 3)
-    public void clickingAmarBangladeshContent() {
+
+    @Test(priority = 1)
+    public void clickingAmarBangladeshContent() throws InterruptedException {
+        Thread.sleep(5000);
         contentPage = homePage.clickOnContent();
     }
 

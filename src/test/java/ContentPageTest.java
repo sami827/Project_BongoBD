@@ -1,6 +1,7 @@
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -10,6 +11,7 @@ public class ContentPageTest extends BaseClass {
 
     HomePage homePage;
     ContentPage contentPage;
+    JavascriptExecutor jse;
 
 
     public ContentPageTest() {
@@ -24,17 +26,23 @@ public class ContentPageTest extends BaseClass {
     }
 
 
-    @Test(priority = 1)
+    @Test
     public void validatingContentTitle() {
         boolean flag = contentPage.verifyContent();
         Assert.assertTrue(flag);
     }
 
 
+//    @Test
+//    public void interactingVideoElements() throws InterruptedException {
+//        contentPage.pauseVideo();
+//    }
+
+
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
-        driver.quit();
+        //driver.quit();
     }
 
 }
