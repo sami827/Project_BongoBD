@@ -26,6 +26,8 @@ public class ContentPage extends BaseClass {
         return title.isDisplayed();
     }
 
+
+    //Can interact with all the video elements with this method
     public void interactingVideo() throws InterruptedException {
         WebElement slider = driver.findElement(By.xpath(PROGRESS_BAR));
         Actions action = new Actions(driver);
