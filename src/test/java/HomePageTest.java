@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class HomePageTest extends BaseClass {
 
     private String EXPECTED_TITLE = "BONGO | Watch Live Tv, Bangla Movies, Natoks Anytime Anywhere";
@@ -25,23 +27,19 @@ public class HomePageTest extends BaseClass {
         contentPage = new ContentPage();
     }
 
-    //Verifying Page Title
-    @Test(priority = 3)
-    public void validatePageTitle() {
-        String actualTitle = homePage.verifyTitle();
-        Assert.assertEquals(actualTitle, EXPECTED_TITLE, "Title doesn't match");
-    }
-
-    //Verifying if the logo is present
-    @Test(priority = 2)
-    public void validatingPageLogo() {
-        boolean flag = homePage.verifyLogo();
-        Assert.assertTrue(flag);
-    }
-
 
     @Test(priority = 1)
-    public void clickingAmarBangladeshContent() throws InterruptedException {
+    public void navigatingToContentPage() throws InterruptedException {
+
+        //Verifying Page Title
+        String actualTitle = homePage.verifyTitle();
+        Assert.assertEquals(actualTitle, EXPECTED_TITLE, "Title doesn't match");
+
+        //Verifying if the logo is present
+        boolean flag = homePage.verifyLogo();
+        Assert.assertTrue(flag);
+
+        //Navigating to Content Page
         Thread.sleep(5000);
         contentPage = homePage.clickOnContent();
     }
@@ -50,7 +48,7 @@ public class HomePageTest extends BaseClass {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
-        driver.quit();
+       // driver.quit();
     }
 
 }

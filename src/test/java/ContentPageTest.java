@@ -7,12 +7,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 public class ContentPageTest extends BaseClass {
 
     HomePage homePage;
     ContentPage contentPage;
-    JavascriptExecutor jse;
-
 
     public ContentPageTest() {
         super();
@@ -25,24 +24,24 @@ public class ContentPageTest extends BaseClass {
         contentPage = homePage.clickOnContent();
     }
 
-
     @Test
-    public void validatingContentTitle() {
+    public void interactingVideoElements() throws InterruptedException {
+
+        //Verifying Content Page
         boolean flag = contentPage.verifyContent();
         Assert.assertTrue(flag);
+
+        Thread.sleep(20000);
+
+        //Interacting with video
+        contentPage.interactingVideo();
+
     }
-
-
-//    @Test
-//    public void interactingVideoElements() throws InterruptedException {
-//        contentPage.pauseVideo();
-//    }
-
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        Thread.sleep(5000);
-        //driver.quit();
+        Thread.sleep(2000);
+        driver.quit();
     }
 
 }

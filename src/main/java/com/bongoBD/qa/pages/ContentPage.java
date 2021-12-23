@@ -3,16 +3,21 @@ package com.bongoBD.qa.pages;
 import com.bongoBD.qa.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.event.KeyEvent;
+
 
 public class ContentPage extends BaseClass {
 
-    JavascriptExecutor jse = (JavascriptExecutor) driver;
 
     private String CONTENT_TITLE = "//h5[text()='Radhuni Celebrates the Taste of Amar Bangladesh']"; //xpath of Content Title
-
-
-
+    private String SKIP_AD = "//div[contains(text(),'Skip Ad')]"; //xpath of Skip ad button
+    private String FORWARD_BUTTON = "//button[contains(@class,'forward_button')]"; //xpath of forward button
+    private String VOLUME_BUTTON = "//button[@title='Mute']";
     //Returning boolean if the content title is displayed
 
     public boolean verifyContent() {
@@ -21,14 +26,12 @@ public class ContentPage extends BaseClass {
         return title.isDisplayed();
     }
 
+    public void interactingVideo() throws InterruptedException {
+        WebElement volumeBtn = driver.findElement(By.xpath(VOLUME_BUTTON));
+        volumeBtn.sendKeys(Keys.ARROW_DOWN);
+        Thread.sleep(2000);
+        volumeBtn.sendKeys(Keys.ARROW_UP);
 
-    public void scrollDown() {
-        jse.executeScript("window.scrollBy(0,1000)");
-    }
-
-    public void pauseVideo() throws InterruptedException {
-        jse.executeScript("jwplayer().pause");
-        Thread.sleep(15000);
     }
 
 

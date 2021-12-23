@@ -34,5 +34,4 @@ public class HomePage extends BaseClass {
         return new ContentPage();
     }
 
-
 }
