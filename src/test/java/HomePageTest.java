@@ -1,13 +1,12 @@
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.awt.*;
+
 
 public class HomePageTest extends BaseClass {
 
@@ -48,7 +47,7 @@ public class HomePageTest extends BaseClass {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
-       // driver.quit();
+       driver.quit();
     }
 
 }

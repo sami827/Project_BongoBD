@@ -1,7 +1,6 @@
 import com.bongoBD.qa.base.BaseClass;
 import com.bongoBD.qa.pages.ContentPage;
 import com.bongoBD.qa.pages.HomePage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
