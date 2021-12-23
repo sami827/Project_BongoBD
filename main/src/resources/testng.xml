@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BongoBD Regression Test Suite">
+
+    <test name="BongoBD Application Test">
+
+        <classes>
+            <class name="com.qa.BongoBD.qa.testCases.ContentPageTest"></class>
+
+            <!-- When Traversing Through Different Contents or Pages The Below Page Should be Executed, Otherwise Not Needed
+
+            <class name="com.qa.BongoBD.qa.testCases.HomePageTest"></class>
+
+            -->
+
+
+
+
+        </classes>
+    </test>
+</suite>
