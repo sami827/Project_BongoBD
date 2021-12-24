@@ -31,10 +31,11 @@ public class ContentPageTest extends BaseClass {
         //Verifying Content Page
         boolean flag = contentPage.verifyContent();
         Assert.assertTrue(flag);
-
         Thread.sleep(20000);
 
         //Interacting with video
+        /*Please do note that if the commercial duration is more than 20 seconds,
+        you've to press the "Skip Ad" button manually to allow the functionalities to perform the way it's intended*/
         contentPage.interactingVideo();
 
     }
@@ -42,6 +43,7 @@ public class ContentPageTest extends BaseClass {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
+        // Just comment out the below statement if you don't want the content to stop
         driver.quit();
     }
 

@@ -15,7 +15,7 @@ public class ContentPage extends BaseClass {
     private String SKIP_AD = "//div[contains(text(),'Skip Ad')]"; //xpath of Skip ad button
     private String FORWARD_BUTTON = "//button[contains(@class,'forward_button')]"; //xpath of forward button
     private String VOLUME_BUTTON = "//button[@title='Mute']"; //xpath of volume button
-    private String PROGRESS_BAR = "//div[contains(@class,'vjs-play-progress')]"; //xpath
+    private String PROGRESS_BAR = "//div[contains(@class,'vjs-play-progress')]"; //xpath of progress bar
 
 
     //Returning boolean if the content title is displayed
@@ -29,6 +29,12 @@ public class ContentPage extends BaseClass {
 
     //Can interact with all the video elements with this method
     public void interactingVideo() throws InterruptedException {
+
+//        WebElement skipBtn = driver.findElement(By.xpath(SKIP_AD));
+//        if(skipBtn.isDisplayed()) {
+//            skipBtn.click();
+//        }
+
         WebElement slider = driver.findElement(By.xpath(PROGRESS_BAR));
         Actions action = new Actions(driver);
         action.dragAndDropBy(slider, 400, 0).build().perform();
