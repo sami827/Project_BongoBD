@@ -18,5 +18,4 @@ public class TestUtility extends BaseClass {
         driver.switchTo().frame(number);
     }
 
-
 }

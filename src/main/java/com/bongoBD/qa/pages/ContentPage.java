@@ -30,11 +30,6 @@ public class ContentPage extends BaseClass {
     //Can interact with all the video elements with this method
     public void interactingVideo() throws InterruptedException {
 
-//        WebElement skipBtn = driver.findElement(By.xpath(SKIP_AD));
-//        if(skipBtn.isDisplayed()) {
-//            skipBtn.click();
-//        }
-
         WebElement slider = driver.findElement(By.xpath(PROGRESS_BAR));
         Actions action = new Actions(driver);
         action.dragAndDropBy(slider, 400, 0).build().perform();
