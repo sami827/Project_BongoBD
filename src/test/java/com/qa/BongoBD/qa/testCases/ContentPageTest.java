@@ -31,7 +31,7 @@ public class ContentPageTest extends BaseClass {
         //Verifying Content Page
         boolean flag = contentPage.verifyContent();
         Assert.assertTrue(flag);
-        Thread.sleep(20000);
+        Thread.sleep(30000);
 
         //Interacting with video
         /*Please do note that if the commercial duration is more than 20 seconds,
