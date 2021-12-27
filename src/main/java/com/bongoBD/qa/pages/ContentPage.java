@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 public class ContentPage extends BaseClass {
 
 
-    private String CONTENT_TITLE = "//h5[text()='Radhuni Celebrates the Taste of Amar Bangladesh']"; //xpath of Content Title
+    private String CONTENT_TITLE = "//h5[text()='Shapod']"; //xpath of Content Title
     private String SKIP_AD = "//div[contains(text(),'Skip Ad')]"; //xpath of Skip ad button
     private String FORWARD_BUTTON = "//button[contains(@class,'forward_button')]"; //xpath of forward button
     private String VOLUME_BUTTON = "//button[@title='Mute']"; //xpath of volume button
