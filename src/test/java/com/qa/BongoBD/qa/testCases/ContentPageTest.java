@@ -42,7 +42,7 @@ public class ContentPageTest extends BaseClass {
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(4000);
         // Just comment out the below statement if you don't want the content to stop
         driver.quit();
     }
